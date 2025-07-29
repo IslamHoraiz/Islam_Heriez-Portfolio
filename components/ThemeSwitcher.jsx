@@ -1,3 +1,5 @@
+// 🎯 الخطوة 3: انسخ الكود ده وحطه في ملف components/ThemeSwitcher.jsx
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -80,7 +82,7 @@ export default function ThemeSwitcher() {
   const currentTheme = themes.find(t => t.name === theme) || themes[0];
 
   return (
-    <div className="fixed bottom-6 left-6 z-50 no-print">
+    <div className="fixed bottom-6 right-6 z-50 no-print">
       {/* الزرار الرئيسي الجميل */}
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -100,14 +102,14 @@ export default function ThemeSwitcher() {
         </div>
         
         {/* نص المعاينة عند التمرير */}
-        <div className="absolute bottom-full left-0 mb-2 px-3 py-1 bg-popover text-popover-foreground text-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+        <div className="absolute bottom-full right-0 mb-2 px-3 py-1 bg-popover text-popover-foreground text-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
           الحالي: {currentTheme.label}
         </div>
       </button>
 
       {/* قائمة اختيار الثيمات الجميلة */}
       {isOpen && (
-        <div className="absolute bottom-full left-0 mb-4 w-80 bg-card border border-border rounded-xl shadow-lg animate-scale-in">
+        <div className="absolute bottom-full right-0 mb-4 w-80 bg-card border border-border rounded-xl shadow-lg animate-scale-in">
           {/* العنوان */}
           <div className="p-4 border-b border-border">
             <div className="flex items-center gap-3">
